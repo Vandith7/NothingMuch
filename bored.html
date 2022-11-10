@@ -1,97 +1,76 @@
 <!DOCTYPE html>
 <html>
+
 <head>
- <title>NothingMuch-A Great Way To Spend Your Time</title>
- <link rel="stylesheet" type="text/css" href="style.css">
- <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
+  <title>NothingMuch-A Great Way To Spend Your Time</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div class="logo">
-                <a href="home.html">NothingMuch</a>
-            </div>
-            <nav>
-                <ul>
-                  <li><a href="home.html">Home</a></li>
-                  <li><a href="bored.html">Bored?</a></li>
-                  <li><a href="avatar.html">Generate A Random Avatar</a></li>
-                  <li><a href="meme.html">Memes</a></li>
-                  <li><a href="doggo.html">PawFect</a></li>
-                </ul>
-            </nav>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <a href="home.html">NothingMuch</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="bored.html">Bored?</a></li>
+          <li><a href="avatar.html">Generate A Random Avatar</a></li>
+          <li><a href="meme.html">Memes</a></li>
+          <li><a href="doggo.html">PawFect</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <section>
+      <h1>Can't find anything to do??</h1>
+      <h1>Click the Button and we will find you Something!!</h1>
+      <div class="centerDiv">
+        <div class="details">
+          <h2>You should:</h2>
+          <h1 class="activity"></h1>
+          <p class="type small"></p>
+
+          <form id="form" action="POST">
+            <input type="checkbox" name="free" id="free">
+            <label for="free">I'm Broke</label><br>
+
+            <button> Click Here</button>
+
         </div>
+    </section>
 
-        <section>
-          <h1>Can't find anything to do??</h1>
-            <h1>Click the Button and we will find you Something!!</h1>
-            <div class="centerDiv">
-             <div class="details">
-                <h2>You should:</h2>
-                <h1 class="activity"></h1>
-                <p class="type small"></p>
-                
-                <form id="form" action="POST">
-                  <input type="checkbox" name="free" id="free">
-                  <label for="free">I'm Broke</label><br>
-           
-             <button> Click Here</button>
-             
-            </div>
-           </section>
+    <script>
+      const endpoint = `https://www.boredapi.com/api/activity`;
+      const button = document.querySelector('.button');
+      const form = document.querySelector('#form');
+      const activityWrapper = document.querySelector('.activity');
+      const typeWrapper = document.querySelector('.type');
 
-           <script>
-            const endpoint = `https://www.boredapi.com/api/activity`;
-const button = document.querySelector('.button');
-const form = document.querySelector('#form');
-const activityWrapper = document.querySelector('.activity');
-const typeWrapper = document.querySelector('.type');
+      const getActivity = async (event) => {
+        event.preventDefault();
+        const isFree = event.target.children.namedItem('free').checked;
+        console.log(isFree);
+        let Api = isFree ? `${endpoint}?price=0` : endpoint;
 
-const changeColor = (type) => {
-  switch(type){
-    case 'relaxation':
-      return 'MEDIUMSLATEBLUE';
-      break;
-    case 'cooking':
-      return 'KHAKI';
-      break;
-    case 'recreational':
-      return `linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)`;
-      break;
-    case 'social':
-      return '#3b5998';
-      break;
-    case 'music':
-      return 'DARKSEAGREEN';
-      break;
-    case 'busywork':
-      return 'CORNFLOWERBLUE';
-      break;
-    default:
-      return 'blue';
-  }
-}
+        const response = await fetch(Api);
+        const json = await response.json();
+        const { activity, type } = json;
+
+        activityWrapper.innerHTML = activity;
 
 
-const getActivity = async (event) => {
-  event.preventDefault();
-  const isFree = event.target.children.namedItem('free').checked;
-  console.log(isFree);
-  let Api = isFree ? `${endpoint}?price=0` : endpoint;
-  
-  const response = await fetch(Api);
-  const json = await response.json();
-  const {activity, type} = json;
-  
-  activityWrapper.innerHTML= activity;
-  
-  
-  
-}
 
-form.addEventListener("submit", getActivity);
+      }
 
-           </script>
+      form.addEventListener("submit", getActivity);
+
+    </script>
 
 </body>
+
 </html>
