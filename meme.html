@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>NothingMuch-A Great Way To Spend Your Time</title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="home.html">NothingMuch</a>
+            </div>
+            <nav>
+                <ul>
+                  <li><a href="home.html">Home</a></li>
+                  <li><a href="bored.html">Bored?</a></li>
+                  <li><a href="avatar.html">Generate A Random Avatar</a></li>
+                  <li><a href="meme.html">Memes</a></li>
+                  <li><a href="doggo.html">PawFect</a></li>
+                </ul>
+            </nav>
+        </div>
+
+<section>
+    <div class="meme-generator">
+        <button class="generate-meme-btn">Generate Meme</button>
+        <h2 class="meme-title">Loading...</h2>
+  
+        <img src="" alt="" />
+        <div class="meme-author"></div>
+      </div>
+</section>
+
+
+<script>
+const generateMemeBtn = document.querySelector(
+  ".meme-generator .generate-meme-btn"
+);
+const memeImage = document.querySelector(".meme-generator img");
+const memeTitle = document.querySelector(".meme-generator .meme-title");
+const memeAuthor = document.querySelector(".meme-generator .meme-author");
+
+const updateDetails = (url, title, author) => {
+  memeImage.setAttribute("src", url);
+  memeTitle.innerHTML = title;
+  memeAuthor.innerHTML = `Meme by: ${author}`;
+};
+
+const generateMeme = () => {
+  fetch("https://meme-api.herokuapp.com/gimme/wholesomememes")
+    .then((response) => response.json())
+    .then((data) => {
+      updateDetails(data.url, data.title, data.author);
+    });
+};
+
+generateMemeBtn.addEventListener("click", generateMeme);
+
+generateMeme();
+</script>
+
+</body>
+</html>
