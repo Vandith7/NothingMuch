@@ -4,6 +4,7 @@
 <head>
     <title>NothingMuch-A Great Way To Spend Your Time</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
 </head>
 
@@ -34,6 +35,16 @@
                     <input type="text" name="" id="nameid">
                 </div>
 
+                
+                <div class="details">
+                    <label for="gender">Select Your Gender</label><br>
+                    <select name="gender" id="genid">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            
+
                 <div class="imgdiv">
                     <img src="welcome.jpg" width="200" height="200" class="imgchange">
                 </div>
@@ -50,7 +61,8 @@
             $(document).ready(function () {
                 $('button').click(function () {
                     const name = $('#nameid').val();
-                    $('.imgchange').attr('src', `https://joeschmoe.io/api/v1/${name}`);
+                    const gender=$('#genid').val();
+                    $('.imgchange').attr('src', `https://joeschmoe.io/api/v1/${gender}/${name}`);
                     const b = $('.imgchange');
                     console.log(b);
 
