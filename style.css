@@ -65,7 +65,7 @@ nav ul li a {
   font-weight: 600;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1020px) {
   .logo {
     padding: 0;
   }
