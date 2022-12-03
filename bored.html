@@ -10,66 +10,78 @@
 <body>
   <div class="container">
     <div class="navbar">
-      <div class="logo">
-        <a href="home.html">NothingMuch</a>
-      </div>
       <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="bored.html">Bored?</a></li>
-          <li><a href="avatar.html">Generate A Random Avatar</a></li>
-          <li><a href="meme.html">Memes</a></li>
-          <li><a href="doggo.html">PawFect</a></li>
-        </ul>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
+        <div class="logo">
+          <a href="home.html">NOTHINGMUCH</a>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="avatar.html">Generate an Avatar</a></li>
+            <li><a href="bored.html">Bored?</a></li>
+            <li><a href="doggo.html">Doggo</a></li>
+            <li><a href="meme.html">Memes</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <section>
-      <h1>Can't find anything to do??</h1>
-      <h1>Click the Button and we will find you Something!!</h1>
-      <div class="centerDiv">
-        <div class="details">
-          <h2>You should:</h2>
-          <h1 class="activity"></h1>
-          <p class="type small"></p>
+  </div>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <section>
+    <div class="header">
+      <h1>‎ </h1>
+    <h1>Can't find anything to do??</h1>
+    <h1>Click the Button and we will find you Something!!</h1>
+    </div>
+    <div class="centerDiv">
+      <div class="details">
+        <h2>You should:</h2>
+        <h1 class="activity"></h1>
+        <p class="type small"></p>
 
-          <form id="form" action="POST">
-            <input type="checkbox" name="free" id="free">
-            <label for="free">I'm Broke</label><br>
+        <form id="form" action="POST">
+          <input type="checkbox" name="free" id="free">
+          <label for="free">I'm Broke</label><br>
 
-            <button> Click Here</button>
+          <button> Click Here</button>
 
-        </div>
-    </section>
+      </div>
+  </section>
 
-    <script>
-      const endpoint = `https://www.boredapi.com/api/activity`;
-      const button = document.querySelector('.button');
-      const form = document.querySelector('#form');
-      const activityWrapper = document.querySelector('.activity');
-      const typeWrapper = document.querySelector('.type');
+  <script>
+    const endpoint = `https://www.boredapi.com/api/activity`;
+    const button = document.querySelector('.button');
+    const form = document.querySelector('#form');
+    const activityWrapper = document.querySelector('.activity');
+    const typeWrapper = document.querySelector('.type');
 
-      const getActivity = async (event) => {
-        event.preventDefault();
-        const isFree = event.target.children.namedItem('free').checked;
-        console.log(isFree);
-        let Api = isFree ? `${endpoint}?price=0` : endpoint;
+    const getActivity = async (event) => {
+      event.preventDefault();
+      const isFree = event.target.children.namedItem('free').checked;
+      console.log(isFree);
+      let Api = isFree ? `${endpoint}?price=0` : endpoint;
 
-        const response = await fetch(Api);
-        const json = await response.json();
-        const { activity, type } = json;
+      const response = await fetch(Api);
+      const json = await response.json();
+      const { activity, type } = json;
 
-        activityWrapper.innerHTML = activity;
+      activityWrapper.innerHTML = activity;
 
 
 
-      }
+    }
 
-      form.addEventListener("submit", getActivity);
+    form.addEventListener("submit", getActivity);
 
-    </script>
+  </script>
 
 </body>
 

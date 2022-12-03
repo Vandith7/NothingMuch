@@ -4,42 +4,53 @@
 <head>
   <title>NothingMuch-A Great Way To Spend Your Time</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+  <link
+    href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
+    rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="container">
     <div class="navbar">
-      <div class="logo">
-        <a href="home.html">NothingMuch</a>
-      </div>
       <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="bored.html">Bored?</a></li>
-          <li><a href="avatar.html">Generate A Random Avatar</a></li>
-          <li><a href="meme.html">Memes</a></li>
-          <li><a href="doggo.html">PawFect</a></li>
-        </ul>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
+        <div class="logo">
+          <a href="home.html">NOTHINGMUCH</a>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="avatar.html">Generate an Avatar</a></li>
+            <li><a href="bored.html">Bored?</a></li>
+            <li><a href="doggo.html">Doggo</a></li>
+            <li><a href="meme.html">Memes</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <section>
-      <div class="app">
-        <div class="header">
-          <h1>``</h1>
-          <h1>Watch A Slideshow of Your Favourite Doggos Here!!</h1>
-          <div class="breed"id="breed"></div>
-        </div>
-
-        <div class="slideshow" id="slideshow">
-          <h2 class="meme-title">Loading...<br>Please Select A Breed</h2>
-        </div>
+  </div>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <section>
+    <div class="app">
+      <div class="header">
+        <h1>``</h1>
+        <h1>Watch A Slideshow of Your Favourite Doggos Here!!</h1>
+        <div class="breed" id="breed"></div>
       </div>
-    </section>
+
+      <div class="slideshow" id="slideshow">
+        <h2 class="meme-title">Loading...<br>Please Select A Breed</h2>
+      </div>
+    </div>
+  </section>
 </body>
 <script>
   let timer

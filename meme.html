@@ -10,66 +10,75 @@
 <body>
   <div class="container">
     <div class="navbar">
-      <div class="logo">
-        <a href="home.html">NothingMuch</a>
-      </div>
       <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="bored.html">Bored?</a></li>
-          <li><a href="avatar.html">Generate A Random Avatar</a></li>
-          <li><a href="meme.html">Memes</a></li>
-          <li><a href="doggo.html">PawFect</a></li>
-        </ul>
+        <input type="checkbox" id="nav" class="hidden">
+        <label for="nav" class="nav-btn">
+          <i></i>
+          <i></i>
+          <i></i>
+        </label>
+        <div class="logo">
+          <a href="home.html">NOTHINGMUCH</a>
+        </div>
+        <div class="nav-wrapper">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="avatar.html">Generate an Avatar</a></li>
+            <li><a href="bored.html">Bored?</a></li>
+            <li><a href="doggo.html">Doggo</a></li>
+            <li><a href="meme.html">Memes</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    <section>
-      <div class="meme-generator">
-        <button class="generate-meme-btn">Generate Meme</button>
-        <h2 class="meme-title">Loading...</h2>
+  </div>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <section>
+    <div class="meme-generator">
+      <button class="generate-meme-btn">Generate Meme</button>
+      <h2 class="meme-title">Loading...</h2>
 
-        <img src="" alt="" />
-        <div class="meme-author"></div>
-      </div>
-    </section>
+      <img src="" alt="" />
+      <div class="meme-author"></div>
+    </div>
+  </section>
 
 
-    <script>
-      const generateMemeBtn = document.querySelector(
-        ".meme-generator .generate-meme-btn"
-      );
-      const memeImage = document.querySelector(".meme-generator img");
-      const memeTitle = document.querySelector(".meme-generator .meme-title");
-      const memeAuthor = document.querySelector(".meme-generator .meme-author");
+  <script>
+    const generateMemeBtn = document.querySelector(
+      ".meme-generator .generate-meme-btn"
+    );
+    const memeImage = document.querySelector(".meme-generator img");
+    const memeTitle = document.querySelector(".meme-generator .meme-title");
+    const memeAuthor = document.querySelector(".meme-generator .meme-author");
 
-      const updateDetails = (url, title, author) => {
-        memeImage.setAttribute("src", url);
-        memeTitle.innerHTML = title;
-        memeAuthor.innerHTML = `Meme by: ${author}`;
-      };
-      //using fetch method
-      // const generateMeme = () => {
-      // fetch("https://meme-api.herokuapp.com/gimme/wholesomememes")
-      // .then((response) => response.json())
-      //.then((data) => {
-      //updateDetails(data.url, data.title, data.author);
-      //});
-      //};
+    const updateDetails = (url, title, author) => {
+      memeImage.setAttribute("src", url);
+      memeTitle.innerHTML = title;
+      memeAuthor.innerHTML = `Meme by: ${author}`;
+    };
+    //using fetch method
+    // const generateMeme = () => {
+    // fetch("https://meme-api.herokuapp.com/gimme/wholesomememes")
+    // .then((response) => response.json())
+    //.then((data) => {
+    //updateDetails(data.url, data.title, data.author);
+    //});
+    //};
 
-      //using async method ngl this looks easier
-      async function generateMeme() {
-        const response = await fetch("https://meme-api.herokuapp.com/gimme/wholesomememes")
-        const data = await response.json()
-        updateDetails(data.url, data.title, data.author)
-      }
+    //using async method ngl this looks easier
+    async function generateMeme() {
+      const response = await fetch("https://meme-api.herokuapp.com/gimme/wholesomememes")
+      const data = await response.json()
+      updateDetails(data.url, data.title, data.author)
+    }
 
-      generateMemeBtn.addEventListener("click", generateMeme);
+    generateMemeBtn.addEventListener("click", generateMeme);
 
-      generateMeme();
-    </script>
+    generateMeme();
+  </script>
 
 
 </body>
