@@ -70,6 +70,14 @@ nav ul li a {
     padding: 0;
   }
 
+  .col-2 h1{
+    font-size: 50px;
+    text-align: center center;
+  }
+  .intro{
+    padding-top: 50px;
+    font-size: 30px;
+  }
   .nav-wrapper {
     position: fixed;
     top: 0;
@@ -289,7 +297,7 @@ button:hover {
 
 .row {
   font-family: 'Karla';
-  color: #d8d8d8;
+  color: #F8FFDB;
   margin-top: 20%;
   text-align: center;
 }
@@ -311,6 +319,9 @@ h1 {
 .meme-generator img {
   height: 430px;
   object-fit: cover;
+  background-size: contain;
+  background-position: center center;
+  overflow: hidden;
 }
 
 .meme-generator .generate-meme-btn {
