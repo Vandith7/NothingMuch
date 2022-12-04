@@ -68,6 +68,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ffd000;
+  transition: all 0.2s ease;
 }
 
 @media screen and (max-width: 1020px) {
@@ -259,7 +260,7 @@ section h1 {
 
 .details input {
   padding: 10px;
-  background-color: rgb(240, 240, 240);
+  background-color: #F8FFDB;
   color: rgb(37, 37, 37);
   text-align: center;
   font-family: 'Roboto';
@@ -267,6 +268,7 @@ section h1 {
 
 .details input[type=text]:focus {
   border: 3px solid #555;
+  background-color: #fff9b9;
 }
 
 .details select {
@@ -275,6 +277,7 @@ section h1 {
   display: inline-block;
   padding: 8px;
   border-radius: 8px;
+  background-color: #F8FFDB;
 }
 .details input{
   border-radius: 8px;
@@ -284,7 +287,7 @@ section h1 {
 }
 
 button {
-  background: #ff6c03;
+  background: #ff9e03;
   width: 180px;
   padding: 4px 0;
   border-radius: 7px;
@@ -297,6 +300,9 @@ button {
 
 button:hover {
   cursor: pointer;
+  background: rgb(255, 115, 0);
+  transition: all 0.4s ease;
+  color: #F8FFDB;
 }
 
 .breed select {
@@ -305,6 +311,7 @@ button:hover {
   display: inline-block;
   padding: 8px;
   border-radius: 8px;
+  background-color: #F8FFDB;
 }
 
 .row {
@@ -353,7 +360,7 @@ h1 {
   margin: 24px 0;
   font-size: 20px;
   color: rgb(32, 32, 32);
-  background: #ffffff;
+  background: #F8FFDB;
   cursor: pointer;
   transition: all 400ms ease;
 }
