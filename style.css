@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Karla', cursive;
 }
+
 .navbar {
   background-color: rgb(255, 255, 255);
   color: #d8d8d8;
@@ -70,14 +71,16 @@ nav ul li a {
     padding: 0;
   }
 
-  .col-2 h1{
+  .col-2 h1 {
     font-size: 50px;
     text-align: center center;
   }
-  .intro{
+
+  .intro {
     padding-top: 50px;
     font-size: 30px;
   }
+
   .nav-wrapper {
     position: fixed;
     top: 0;
@@ -217,19 +220,20 @@ section {
 }
 
 section h1 {
-  text-shadow: 2px 5px 5px #2f3542;
+  /*text-shadow: 2px 5px 5px #2f3542;*/
   word-spacing: 10px;
   margin-bottom: 15px;
   font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: white;
+  color: #F8FFDB;
 }
 
 .centerDiv {
   width: 60%;
   height: 450px;
-  box-shadow: 2px 2px 2px 5px white;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 6px white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,8 +270,11 @@ section h1 {
   font-family: 'Roboto';
   display: inline-block;
   padding: 8px;
+  border-radius: 8px;
 }
-
+.details input{
+  border-radius: 8px;
+}
 .imgdiv {
   margin: 30px 0;
 }
@@ -293,6 +300,7 @@ button:hover {
   font-family: 'Roboto';
   display: inline-block;
   padding: 8px;
+  border-radius: 8px;
 }
 
 .row {
@@ -309,6 +317,15 @@ button:hover {
 body {
   background-color: rgb(255, 149, 0);
   color: #1a1a1a;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 h1 {
