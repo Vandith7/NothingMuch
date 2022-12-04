@@ -66,6 +66,10 @@ nav ul li a {
   font-weight: 600;
 }
 
+nav ul li a:hover {
+  color: #ffd000;
+}
+
 @media screen and (max-width: 1020px) {
   .logo {
     padding: 0;
