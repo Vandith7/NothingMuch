@@ -490,6 +490,10 @@ h1 {
   font-family: monospace;
 }
 
+.transperant{
+  color: transparent;
+}
+
 @keyframes slide {
   0% {
     transform: translateX(-25%);
