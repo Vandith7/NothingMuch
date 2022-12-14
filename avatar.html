@@ -50,14 +50,36 @@
             </div>
 
 
-            <div class="details">
+            <!-- <div class="details">
                 <label for="gender">Select Your Gender</label><br>
                 <select name="gender" id="genid">
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-            </div>
+            </div> -->
 
+            <div class="details">
+                <label for="a_style">Select A Style</label><br>
+                <select name="a_style" id="styid">
+                    <option value="adventurer">Adventurer</option>
+                    <option value="adventurer-neutral">Adventurer-neutral</option>
+                    <option value="avataaars">Avataaars</option>
+                    <option value="big-ears">Big-ears</option>
+                    <option value="big-ears-neutral">Big-ears-neutral</option>
+                    <option value="big-smile">Big-smile</option>
+                    <option value="bottts">Bottts</option>
+                    <option value="croodles">Croodles</option>
+                    <option value="croodles-neutral">Croodles-neutral</option>
+                    <option value="identicon">Identicon</option>
+                    <option value="initials">Initials</option>
+                    <option value="micah">Micah</option>
+                    <option value="miniavs">Miniavs</option>
+                    <option value="open-peeps">Open-peeps</option>
+                    <option value="personas">Personas</option>
+                    <option value="pixel-art">Pixel-art</option>
+                    <option value="pixel-art-neutral">Pixel-art-neutral</option>
+                </select>
+            </div>
 
             <div class="imgdiv">
                 <img src="welcome.jpg" width="200" height="200" class="imgchange">
@@ -76,7 +98,10 @@
             $('button').click(function () {
                 const name = $('#nameid').val();
                 const gender = $('#genid').val();
-                $('.imgchange').attr('src', `https://joeschmoe.io/api/v1/${gender}/${name}`);
+                const a_style = $('#styid').val();
+                //$('.imgchange').attr('src', `https://joeschmoe.io/api/v1/${gender}/${name}`);
+                //$('.imgchange').attr('src', `https://avatars.dicebear.com/api/${gender}/${name}.svg`);
+                $('.imgchange').attr('src', `https://avatars.dicebear.com/api/${a_style}/${name}.svg`);
                 const b = $('.imgchange');
                 console.log(b);
 
