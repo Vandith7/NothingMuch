@@ -519,10 +519,10 @@ h1 {
 }
 
 .spinner {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   position: relative;
-  margin: 100px auto;
+  margin: 120px auto;
 }
 
 .double-bounce1,

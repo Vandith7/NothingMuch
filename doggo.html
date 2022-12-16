@@ -28,7 +28,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="meme.html">Memes</a></li>
             <li><a href="bored.html">Bored?</a></li>
-            <li><a href="doggo.html">Doggo</a></li>
+            <li><a href="doggo.html">PawFect</a></li>
             <li><a href="avatar.html">Generate an Avatar</a></li>
           </ul>
         </div>
@@ -42,12 +42,12 @@
     <div class="app">
       <div class="header">
         <h1>``</h1>
-        <h1>Watch A Slideshow of Your Favourite Doggos Here!!</h1>
+        <h1>Watch A Slideshow of<br>Your Favourite Dog Breeds Here!!</h1>
         <div class="breed" id="breed"></div>
       </div>
 
       <div class="slideshow" id="slideshow">
-        <h2 class="meme-title">Please Select A Breed<br>
+        <h2 class="meme-title">
           <div class="spinner">
             <div class="double-bounce1"></div>
             <div class="double-bounce2"></div>
@@ -76,7 +76,7 @@
   function createBreedList(breedList) {
     document.getElementById("breed").innerHTML = `
 <select onchange="loadByBreed(this.value)">
-      <option>Choose a dog breed</option>
+      <option>Choose a dog breed Here!!</option>
       ${Object.keys(breedList).map(function (breed) {
       return `<option>${breed}</option>`
     }).join('')}
