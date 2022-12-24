@@ -13,12 +13,22 @@
   color: #F8FFDB;
 }
 
+.NM{
+  color: #1a1a1a;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0px;
+  font-family: 'Karla',cursive;
+  text-decoration: none
+}
+
 .content_new h1 {
   font-size: 70px;
   margin-top: 80px;
 }
 
 .content_new h2 {
+  font-size: 40px;
   margin: 20px auto;
   font-weight: 100;
   line-height: 25px;
@@ -36,7 +46,6 @@
   top: 0;
   left: 0;
   text-align: center;
-  font-family: 'Karla', cursive;
 }
 
 
@@ -75,7 +84,6 @@ nav ul li:last-child {
 
 nav ul li a {
   display: inline-block;
-  outline: none;
   color: #000;
   text-transform: uppercase;
   text-decoration: none;
@@ -90,14 +98,20 @@ nav ul li a:hover {
   transition: all 0.4s ease;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1030px) {
   .logo {
     padding: 0;
+    padding-right: 10px;
+    float: right;
   }
 
   .content_new h1 {
     font-size: 50px;
     text-align: center center;
+  }
+
+  .content_new h2{
+    font-size: 30px;
   }
 
   .intro {
@@ -112,7 +126,9 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: linear-gradient(-60deg, rgb(255, 140, 0) 50%, rgb(255, 255, 255) 50%);
+    background-image: linear-gradient(-60deg, rgb(255, 140, 0) 50%, rgb(255, 255, 255) 50%); 
+    /* background: hsl(0 0% 0%/0.1);
+    backdrop-filter: blur(2rem);  */
     opacity: 0;
     transition: all 0.2s ease;
   }
@@ -128,7 +144,7 @@ nav ul li a:hover {
     display: block;
     float: none;
     width: 100%;
-    text-align: right;
+    text-align: center;
     margin-bottom: 10px;
   }
 
@@ -156,7 +172,7 @@ nav ul li a:hover {
     padding: 10px 24px;
     opacity: 0;
     color: #000;
-    font-size: 14px;
+    font-size: 28px;
     font-weight: 600;
     letter-spacing: 1.2px;
     transform: translateX(-20px);
@@ -164,16 +180,19 @@ nav ul li a:hover {
   }
 
   .nav-btn {
-    position: fixed;
-    padding-top: 8px;
+    /* position: fixed; */
+    padding-top: 15px;
     right: 10px;
-    top: 10px;
+    /* top: 10px; */
     display: block;
     width: 48px;
     height: 48px;
     cursor: pointer;
     z-index: 9999;
     border-radius: 50%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
 
   .nav-btn i {
@@ -276,6 +295,7 @@ section h1 {
 .details {
   text-align: center;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .details label {
@@ -343,15 +363,15 @@ button:hover {
 body {
   background-color: rgb(255, 149, 0);
   color: #1a1a1a;
+  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Karla', cursive;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 body::-webkit-scrollbar {
   display: none;
-}
-
-body {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 h1 {
@@ -365,14 +385,23 @@ h1 {
   background-size: contain;
   background-position: center center;
   overflow: hidden;
+  background-repeat: no-repeat;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
 }
 
 .meme-generator .generate-meme-btn {
   padding: 8px 20px;
+  flex: 1;
   border: none;
   border-left: 4px solid #222;
   border-right: 4px solid #222;
-  margin: 24px 0;
+  margin: 12px 0;
   font-size: 20px;
   color: rgb(32, 32, 32);
   background: #F8FFDB;
@@ -394,17 +423,6 @@ h1 {
 .meme-generator {
   color: #1a1a1a;
   text-align: center;
-}
-
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: 'Karla', cursive;
 }
 
 .app {
@@ -454,16 +472,6 @@ body {
 .slide:nth-last-child(2) {
   opacity: 1;
   transform: scale(1.08);
-}
-
-
-
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
 }
 
 .bg {
