@@ -3,16 +3,17 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8T2H41XRSZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8T2H41XRSZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-8T2H41XRSZ');
-</script>
-    <title>Nothing-Much -A Great Way To Spend Your Time</title>
+        gtag('config', 'G-8T2H41XRSZ');
+    </script>
+    <title>Nothing-Much - Generate Avatar from your name</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="website icon" type="png" href="nothing.png">
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200&" rel="stylesheet">
     <link
         href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
@@ -32,7 +33,7 @@
                     <i></i>
                     <i></i>
                 </label>
-                
+
                 <div class="nav-wrapper">
                     <ul>
                         <li><a href="index.html">Home</a></li>
@@ -94,7 +95,7 @@
                 <img src="welcome.jpg" width="200" height="200" class="imgchange" alt="Hello There!! Welcome!!">
             </div>
 
-            <button> Click Here</button>
+            <button id="button">CLICK HERE</button>
 
         </div>
     </section>
@@ -115,6 +116,22 @@
                 console.log(b);
 
             });
+        });
+
+        var input = document.getElementById("nameid");
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("button").click();
+            }
+        });
+
+        var input = document.getElementById("styid");
+        input.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("button").click();
+            }
         });
     </script>
 
