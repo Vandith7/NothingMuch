@@ -46,27 +46,15 @@
             </nav>
         </div>
     </div>
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
     <section>
         <div class="header">
             <h1>Generate a Random Avatar From Your Name</h1>
         </div>
-        <div class="centerDiv">
-            <div class="details">
+        <div class="centerDiv2">
+            <div class="details" id="namecs">
                 <label>Enter Your Name</label><br>
-                <input type="text" name="" id="nameid">
+                <input type="text" name="" id="nameid" placeholder="Enter Any Name Here">
             </div>
-
-
-            <!-- <div class="details">
-                <label for="gender">Select Your Gender</label><br>
-                <select name="gender" id="genid">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div> -->
 
             <div class="details">
                 <label for="a_style">Select A Style</label><br>
@@ -132,6 +120,14 @@
                 event.preventDefault();
                 document.getElementById("button").click();
             }
+        });
+
+        $(function () {
+            $('a').each(function () {
+                if ($(this).prop('href') == window.location.href) {
+                    $(this).addClass('active'); $(this).parents('li').addClass('active');
+                }
+            });
         });
     </script>
 

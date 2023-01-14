@@ -43,9 +43,6 @@
       </nav>
     </div>
   </div>
-  <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div>
   <section>
     <div class="header">
       <h1>Can't find anything to do??</h1>
@@ -91,6 +88,16 @@
 
     form.addEventListener("submit", getActivity);
 
+  </script>
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+    $(function () {
+      $('a').each(function () {
+        if ($(this).prop('href') == window.location.href) {
+          $(this).addClass('active'); $(this).parents('li').addClass('active');
+        }
+      });
+    });
   </script>
 
 </body>

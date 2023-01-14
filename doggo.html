@@ -46,23 +46,24 @@
       </nav>
     </div>
   </div>
-  <div class="bg"></div>
-  <div class="bg bg2"></div>
-  <div class="bg bg3"></div>
   <div class="section1">
-    <div class="app">
-      <div class="header">
-        <h1>Watch A Slideshow of<br>Your Favourite Dog Breeds Here!!</h1>
-        <div class="breed" id="breed"></div>
-      </div>
+    <div class="header">
+      <h1>Watch A Slideshow of<br>Your Favourite Dog Breeds Here!!</h1>
+    </div>
+    <div class="centerDiv1">
+      <div class="app">
+        <div class="header">
+          <div class="breed" id="breed"></div>
+        </div>
 
-      <div class="slideshow" id="slideshow">
-        <h2 class="dog-title">
-          <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-          </div>
-        </h2>
+        <div class="slideshow" id="slideshow">
+          <h2 class="dog-title">
+            <div class="spinner">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+            </div>
+          </h2>
+        </div>
       </div>
     </div>
   </div>
@@ -121,7 +122,6 @@
 <div class="slide"></div>
 `
     }
-
     function nextSlide() {
       document.getElementById("slideshow").insertAdjacentHTML("beforeend", `<div class="slide" style="background-image: url('${images[currentPosition]}')"></div>`)
       deleteFirstPhotoDelay = setTimeout(function () {
@@ -135,5 +135,16 @@
     }
   }
 </script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+  $(function () {
+    $('a').each(function () {
+      if ($(this).prop('href') == window.location.href) {
+        $(this).addClass('active'); $(this).parents('li').addClass('active');
+      }
+    });
+  });
+</script>
+</body>
 
 </html>
